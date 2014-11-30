@@ -1,1 +1,42 @@
-Hello World
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head> 
+	<title>数字时钟</title>
+</head>
+<script language="JavaScript">
+	function showTime(){
+		var time=new Date();
+		var monthArray=new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+		var dayArray =new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六","星期日");
+		y=time.getFullYear();
+		d=time.getDate();
+
+		mon=time.getMonth();
+		wek=dayArray[time.getDay()];
+
+		h=time.getHours();
+		m=time.getMinutes();
+		s=time.getSeconds();
+		suf="AM";
+		if(h>12){suf="PM";h=h-12;}
+		if(m<=9)m="0"+m;
+		if(s<=9)s="0"+s;
+
+		theTime="<font size=2>"+y+"年"+mon+"月"+d+"日"+"&nbsp;&nbsp;"+wek+"&nbsp;"+h+":"+m+":"+s+"&nbsp;"+suf+"</font>";
+		DT.innerHTML=theTime;
+		setTimeout("showTime()",1000);
+	}
+</script>
+<body onload="showTime()">
+	<span id=DT style="position:absolute;left=35px;top=15px"></span>
+</body>
+<script>
+	function person(firstname,lastname,age,eyecolor)
+	{
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.age = age;
+		this.eyecolor = eyecolor;
+	}
+</script>
+</html>
